@@ -156,6 +156,8 @@ body {
 .nav-link {
   position: relative;
   transition: all 0.2s ease;
+  margin: 0 4px;
+  display: inline-block;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -181,6 +183,36 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline;
+}
+
+/* Hero Action Buttons */
+a[href="#projetos"] {
+  background: linear-gradient(to right, #38bdf8, #67e8f9) !important;
+  color: #020617 !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.3) !important;
+  text-decoration: none;
+}
+
+a[href="#projetos"]:hover {
+  background: linear-gradient(to right, #7dd3fc, #a5f3fc) !important;
+  box-shadow: 0 15px 30px -5px rgba(56, 189, 248, 0.45) !important;
+}
+
+a[href*="wa.me"] {
+  text-decoration: none;
+}
+
+#hero a[href*="wa.me"] {
+  background-color: rgba(15, 23, 42, 0.9) !important;
+  border: 1px solid rgba(52, 211, 153, 0.4) !important;
+  color: #6ee7b7 !important;
+  box-shadow: 0 8px 20px -4px rgba(5, 46, 22, 0.6) !important;
+}
+
+#hero a[href*="wa.me"]:hover {
+  background-color: rgba(6, 78, 59, 0.4) !important;
+  border-color: #34d399 !important;
 }
 
 /* Glassmorphism Cards */
@@ -227,10 +259,23 @@ input[type="email"],
 input[type="tel"],
 select,
 textarea {
-  background-color: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(51, 65, 85, 0.8);
-  color: #ffffff;
+  background-color: #0f172a !important;
+  border: 1px solid rgba(51, 65, 85, 0.8) !important;
+  color: #ffffff !important;
   transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+  color: #64748b !important;
+}
+
+select option {
+  background-color: #0b1329 !important;
+  color: #f8fafc !important;
 }
 
 input[type="text"]:focus,
@@ -238,15 +283,34 @@ input[type="email"]:focus,
 input[type="tel"]:focus,
 select:focus,
 textarea:focus {
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
-  outline: none;
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25) !important;
+  outline: none !important;
+  background-color: #0f172a !important;
 }
 
 input[type="checkbox"] {
   accent-color: var(--accent-blue);
   cursor: pointer;
   flex-shrink: 0;
+  background-color: #0f172a;
+}
+
+#copy-email-btn {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid rgba(51, 65, 85, 0.6) !important;
+  color: #94a3b8 !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+#copy-email-btn:hover {
+  background-color: rgba(51, 65, 85, 0.9) !important;
+  color: #ffffff !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
 }
 
 /* Layout Utilities (Garante renderização perfeita sem Tailwind CLI) */
