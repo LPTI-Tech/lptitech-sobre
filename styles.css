@@ -41,7 +41,33 @@ body {
   font-family: var(--font-mono);
 }
 
-/* Background Aura Lighting & Grid */
+/* Background Aura Lighting, Grid & Particles Canvas */
+.global-background {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#tech-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+/* Sections and main content stacking context */
+main, section, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
 .bg-grid-pattern {
   position: absolute;
   inset: 0;

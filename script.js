@@ -152,25 +152,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. CANVAS HERO INTERATIVO (MALHA TECNOLÓGICA & PARTÍCULAS)
+  // 6. CANVAS GLOBAL INTERATIVO (MALHA TECNOLÓGICA & PARTÍCULAS EM TODA A PÁGINA)
   const canvas = document.getElementById('tech-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let width, height;
+    let dpr = window.devicePixelRatio || 1;
     let particles = [];
-    const particleCount = 45;
-    const maxDistance = 150;
+    const particleCount = 55;
+    const maxDistance = 160;
     
     let mouse = {
       x: null,
       y: null,
-      radius: 140
+      radius: 150
     };
 
     window.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
     });
 
     window.addEventListener('mouseleave', () => {
@@ -179,8 +179,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const resize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      dpr = window.devicePixelRatio || 1;
+      width = window.innerWidth;
+      height = window.innerHeight;
+
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+
       initParticles();
     };
 
@@ -229,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const initParticles = () => {
       particles = [];
-      const count = window.innerWidth < 768 ? 25 : particleCount;
+      const count = window.innerWidth < 768 ? 30 : particleCount;
       for (let i = 0; i < count; i++) {
         particles.push(new Particle());
       }
@@ -250,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(56, 189, 248, ${opacity * 0.25})`;
+            ctx.strokeStyle = `rgba(56, 189, 248, ${opacity * 0.28})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }

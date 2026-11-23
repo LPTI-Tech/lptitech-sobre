@@ -50,12 +50,14 @@
 </head>
 <body class="bg-[#030712] text-slate-200 antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
 
-  <!-- Elemento de Iluminação de Fundo Global (Aura Difusa) -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+  <!-- Elemento de Iluminação de Fundo Global (Aura Difusa & Partículas) -->
+  <div class="global-background fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
     <div class="glow-orb orb-primary"></div>
     <div class="glow-orb orb-emerald"></div>
     <div class="glow-orb orb-secondary"></div>
     <div class="bg-grid-pattern"></div>
+    <!-- Canvas de Rede Tecnológica e Partículas Interativas em Toda a Janela -->
+    <canvas id="tech-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
   </div>
 
   <!-- Header Fixo Minimalista com Glassmorphism Dinâmico -->
@@ -146,9 +148,6 @@
   <!-- SEÇÃO 1: Hero Limpo e Impactante (#hero) -->
   <section id="hero" class="relative pt-36 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
     
-    <!-- Canvas de Rede Tecnológica e Partículas Interativas -->
-    <canvas id="tech-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-40 z-0"></canvas>
-
     <!-- Conteúdo Hero Centralizado -->
     <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
       
@@ -213,8 +212,8 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 2: Sobre Leonidas Paulino & A LPTI Tech (#sobre) - Fundo Alternado #060b16 -->
-  <section id="sobre" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-[#060b16] border-t border-slate-800/60">
+  <!-- SEÇÃO 2: Sobre Leonidas Paulino & A LPTI Tech (#sobre) - Fundo Alternado Translúcido -->
+  <section id="sobre" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-slate-950/55 border-t border-slate-800/60 backdrop-blur-[2px]">
     <div class="max-w-[1200px] mx-auto">
       
       <!-- Cabeçalho da Seção -->
@@ -520,8 +519,8 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 3: Vitrine de Projetos (#projetos) - Fundo #030712 com Divisor Sutil -->
-  <section id="projetos" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-[#030712] border-t border-slate-800/60">
+  <!-- SEÇÃO 3: Vitrine de Projetos (#projetos) - Fundo Translúcido com Divisor Sutil -->
+  <section id="projetos" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-[#030712]/40 border-t border-slate-800/60 backdrop-blur-[2px]">
     <div class="max-w-[1200px] mx-auto">
       
       <!-- Cabeçalho da Seção -->
@@ -776,8 +775,8 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 4: Pilares de Atuação (#atuacao) - Fundo #060b16 com Divisor Sutil -->
-  <section id="atuacao" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-[#060b16] border-t border-slate-800/60">
+  <!-- SEÇÃO 4: Pilares de Atuação (#atuacao) - Fundo Alternado Translúcido com Divisor Sutil -->
+  <section id="atuacao" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-slate-950/55 border-t border-slate-800/60 backdrop-blur-[2px]">
     <div class="max-w-[1200px] mx-auto">
       
       <!-- Cabeçalho da Seção -->
@@ -970,8 +969,8 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 5: Contato & Rodapé (#contato) - Fundo #030712 com Gradiente Suave -->
-  <section id="contato" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-gradient-to-b from-[#030712] to-[#020617] border-t border-slate-800/60">
+  <!-- SEÇÃO 5: Contato & Rodapé (#contato) - Fundo Translúcido Suave -->
+  <section id="contato" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-gradient-to-b from-transparent via-[#030712]/60 to-[#020617]/80 border-t border-slate-800/60 backdrop-blur-[2px]">
     <div class="max-w-[1200px] mx-auto">
       
       <!-- Cabeçalho da Seção -->
@@ -1148,7 +1147,7 @@
   </section>
 
   <!-- Rodapé Institucional Assinado (#020617) -->
-  <footer class="relative bg-[#020617] border-t border-slate-800/80 py-12 px-4 sm:px-6 lg:px-8 z-10">
+  <footer class="relative bg-[#020617]/90 border-t border-slate-800/80 py-12 px-4 sm:px-6 lg:px-8 z-10 backdrop-blur-md">
     <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       
       <!-- Logo + Assinatura -->
