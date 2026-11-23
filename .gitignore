@@ -1,0 +1,11 @@
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+gestor_mei.db
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
