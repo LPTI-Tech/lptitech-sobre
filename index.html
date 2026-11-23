@@ -17,6 +17,30 @@
   <!-- Favicon SVG Moderno -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='10' fill='%23030712'/><rect x='2' y='2' width='36' height='36' rx='8' fill='none' stroke='%2338bdf8' stroke-width='1.5' stroke-opacity='0.5'/><path d='M11 12v16h8' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M22 12v16M22 12h6a4 4 0 0 1 0 8h-6' stroke='%2334d399' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
+  <!-- Tailwind CSS via CDN Oficial -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#030712',
+              surface: '#060b16',
+              card: '#0f172a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
   <!-- Google Fonts: Plus Jakarta Sans, Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,14 +59,14 @@
   </div>
 
   <!-- Header Fixo Minimalista com Glassmorphism Dinâmico -->
-  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <div class="header-container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
-      <div class="header-inner flex items-center justify-between h-20 w-full">
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/85 backdrop-blur-xl border-b border-slate-800/80 transition-all duration-300">
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
         
         <!-- Logotipo / Monograma LPTI Tech -->
         <a href="#hero" class="group flex items-center gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-lg p-1" aria-label="LPTI Tech - Ir para o início">
-          <div class="header-logo-icon relative flex items-center justify-center w-[38px] h-[38px] rounded-[10px] bg-[#0b1329] border border-sky-400/40 shadow-lg shadow-sky-950/40 group-hover:border-sky-400/80 transition-all duration-300">
-            <svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="relative flex items-center justify-center w-[38px] h-[38px] rounded-[10px] bg-slate-900/80 border border-sky-400/35 shadow-lg shadow-sky-950/40 group-hover:border-sky-400/80 transition-all duration-300 shrink-0">
+            <svg class="w-5 h-5 transition-transform duration-300 group-hover:scale-105 shrink-0" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8 9V23H15" stroke="#38BDF8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M18 9V23M18 9H23.5C25.433 9 27 10.567 27 12.5C27 14.433 25.433 16 23.5 16H18" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
               <circle cx="24" cy="23" r="1.5" fill="#38BDF8"/>
@@ -57,25 +81,25 @@
           </div>
         </a>
 
-        <!-- Navegação Desktop -->
-        <nav class="header-nav hidden md:flex items-center gap-8 px-5 py-2 rounded-full bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-inner" aria-label="Navegação Principal">
-          <a href="#sobre" class="nav-link px-3 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full transition-colors duration-200">Sobre & Trajetória</a>
-          <a href="#projetos" class="nav-link px-3 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full transition-colors duration-200">Projetos</a>
-          <a href="#atuacao" class="nav-link px-3 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full transition-colors duration-200">Atuação</a>
-          <a href="#contato" class="nav-link px-3 py-1 text-sm font-medium text-slate-300 hover:text-white rounded-full transition-colors duration-200">Contato</a>
+        <!-- Navegação Desktop Centralizada -->
+        <nav class="hidden md:flex items-center gap-8 px-6 py-2 rounded-full bg-slate-900/60 border border-slate-800/80 backdrop-blur-md shadow-inner" aria-label="Navegação Principal">
+          <a href="#sobre" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Sobre & Trajetória</a>
+          <a href="#projetos" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Projetos</a>
+          <a href="#atuacao" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Atuação</a>
+          <a href="#contato" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Contato</a>
         </nav>
 
-        <!-- Botão CTA WhatsApp Desktop -->
-        <div class="header-cta hidden md:flex items-center gap-3">
+        <!-- Botão CTA WhatsApp Desktop Alinhado à Direita -->
+        <div class="hidden md:flex items-center">
           <a href="https://wa.me/5531988004560?text=Ol%C3%A1%2C%20Leonidas!%20Vim%20pelo%20site%20da%20LPTI%20Tech%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." 
              target="_blank" 
              rel="noopener noreferrer" 
-             class="btn-cta-whatsapp group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm text-emerald-300 bg-emerald-950/40 border border-emerald-500/40 hover:border-emerald-400 hover:bg-emerald-900/30 transition-all duration-300 shadow-lg shadow-emerald-950/50 hover:shadow-emerald-500/20 active:scale-95">
+             class="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm text-emerald-300 bg-emerald-950/30 border border-emerald-500/40 hover:border-emerald-400 hover:bg-emerald-900/30 transition-all duration-300 shadow-lg shadow-emerald-950/40 hover:shadow-emerald-500/20 active:scale-95">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
-            <svg class="whatsapp-icon w-4 h-4 text-emerald-400 shrink-0 group-hover:scale-110 transition-transform" width="18" height="18" style="width: 18px; height: 18px; flex-shrink: 0;" viewBox="0 0 24 24" fill="currentColor">
+            <svg class="w-4 h-4 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.971.553 1.77.85 2.781.85 3.181 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.766c0 5.485-4.464 9.948-9.969 9.948-1.748 0-3.385-.453-4.81-1.242l-5.221 1.368 1.396-5.097c-.902-1.488-1.417-3.23-1.417-5.077 0-5.485 4.464-9.949 9.969-9.949 5.505 0 9.969 4.464 9.969 9.949zm-5.705 4.129c-.211-.106-1.25-.617-1.444-.687-.194-.071-.336-.106-.477.106-.141.211-.548.687-.671.828-.124.141-.247.159-.459.053-.211-.106-.893-.329-1.701-1.049-.629-.561-1.054-1.254-1.178-1.465-.124-.212-.013-.326.092-.432.096-.095.212-.247.318-.371.106-.123.141-.212.212-.353.07-.141.035-.265-.018-.371-.053-.106-.477-1.148-.653-1.571-.172-.413-.347-.357-.477-.364-.124-.006-.265-.008-.407-.008-.141 0-.371.053-.565.265-.194.212-.741.724-.741 1.765s.759 2.048.865 2.19c.106.141 1.492 2.278 3.615 3.194.505.218.899.348 1.206.446.508.161.97.138 1.336.084.407-.061 1.25-.511 1.426-1.005.177-.494.177-.918.124-1.006-.053-.088-.194-.141-.406-.247z"/>
             </svg>
             <span>Falar no WhatsApp</span>
@@ -109,7 +133,7 @@
              target="_blank" 
              rel="noopener noreferrer" 
              class="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl font-medium text-emerald-300 bg-emerald-950/60 border border-emerald-500/40">
-            <svg class="whatsapp-icon w-5 h-5 text-emerald-400 shrink-0" width="20" height="20" style="width: 20px; height: 20px; flex-shrink: 0;" viewBox="0 0 24 24" fill="currentColor">
+            <svg class="w-5 h-5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.971.553 1.77.85 2.781.85 3.181 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.766c0 5.485-4.464 9.948-9.969 9.948-1.748 0-3.385-.453-4.81-1.242l-5.221 1.368 1.396-5.097c-.902-1.488-1.417-3.23-1.417-5.077 0-5.485 4.464-9.949 9.969-9.949 5.505 0 9.969 4.464 9.969 9.949zm-5.705 4.129c-.211-.106-1.25-.617-1.444-.687-.194-.071-.336-.106-.477.106-.141.211-.548.687-.671.828-.124.141-.247.159-.459.053-.211-.106-.893-.329-1.701-1.049-.629-.561-1.054-1.254-1.178-1.465-.124-.212-.013-.326.092-.432.096-.095.212-.247.318-.371.106-.123.141-.212.212-.353.07-.141.035-.265-.018-.371-.053-.106-.477-1.148-.653-1.571-.172-.413-.347-.357-.477-.364-.124-.006-.265-.008-.407-.008-.141 0-.371.053-.565.265-.194.212-.741.724-.741 1.765s.759 2.048.865 2.19c.106.141 1.492 2.278 3.615 3.194.505.218.899.348 1.206.446.508.161.97.138 1.336.084.407-.061 1.25-.511 1.426-1.005.177-.494.177-.918.124-1.006-.053-.088-.194-.141-.406-.247z"/>
             </svg>
             <span>Falar no WhatsApp</span>
@@ -119,38 +143,38 @@
     </div>
   </header>
 
-  <!-- SEÇÃO 1: Hero Fullscreen (100vh) com Malha Tecnológica Interativa -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
+  <!-- SEÇÃO 1: Hero Limpo e Impactante (#hero) -->
+  <section id="hero" class="relative pt-36 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
     
     <!-- Canvas de Rede Tecnológica e Partículas Interativas -->
     <canvas id="tech-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-40 z-0"></canvas>
 
-    <!-- Conteúdo Hero -->
-    <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+    <!-- Conteúdo Hero Centralizado -->
+    <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
       
       <!-- Badge Tecnológica -->
       <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/80 border border-sky-500/30 backdrop-blur-md mb-8 shadow-lg shadow-sky-950/50 hover:border-sky-400/50 transition-colors animate-fade-in-down">
         <span class="flex h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]"></span>
         <span class="text-xs sm:text-sm font-mono tracking-wider font-semibold text-sky-300 uppercase">
-          + DESENVOLVIMENTO DE SOFTWARE • SEGURANÇA DA INFORMAÇÃO • INFRAESTRUTURA
+          DESENVOLVIMENTO DE SOFTWARE • SEGURANÇA • INFRAESTRUTURA
         </span>
       </div>
 
       <!-- Título Principal Impactante -->
-      <h1 class="hero-title font-display font-extrabold text-white tracking-tight leading-[1.15] max-w-4xl mb-6">
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight max-w-4xl mb-6">
         Desenvolvimento de Software e Segurança de <span class="hero-gradient-text">nível corporativo</span> para impulsionar negócios.
       </h1>
 
-      <!-- Subtítulo Estratégico -->
+      <!-- Subtítulo Enxuto (Máximo 3 linhas) -->
       <p class="text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl mb-10 text-balance">
-        <strong class="text-white font-semibold">LPTI Tech</strong> — Estúdio de tecnologia liderado por <strong class="text-white font-semibold">Leonidas Paulino</strong> em Betim/MG. Mais de 15 anos de experiência em ambientes críticos (setor bancário e administração pública) aplicados no desenvolvimento de sistemas SaaS, segurança de dados e automação.
+        <strong class="text-white font-semibold">LPTI Tech</strong> — Estúdio de tecnologia liderado por <strong class="text-white font-semibold">Leonidas Paulino</strong> em Betim/MG. Mais de 15 anos de experiência em ambientes críticos (bancos e setor público) aplicados a sistemas SaaS, segurança e infraestrutura corporativa.
       </p>
 
-      <!-- Botões de Ação -->
+      <!-- Botões de Ação Bem Definidos -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-14">
         <a href="#projetos" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-sky-400 to-cyan-300 hover:from-sky-300 hover:to-cyan-200 transition-all duration-300 shadow-xl shadow-sky-500/25 hover:shadow-sky-400/40 hover:-translate-y-0.5 active:translate-y-0 text-base">
           <span>Conhecer Nossas Soluções</span>
-          <svg class="w-5 h-5 shrink-0" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </a>
@@ -159,29 +183,29 @@
            target="_blank" 
            rel="noopener noreferrer" 
            class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-semibold text-emerald-300 bg-slate-900/80 border border-emerald-500/40 hover:border-emerald-400 hover:bg-emerald-950/40 transition-all duration-300 shadow-lg shadow-emerald-950/40 hover:-translate-y-0.5 text-base">
-          <svg class="whatsapp-icon w-5 h-5 text-emerald-400 shrink-0" width="20" height="20" style="width: 20px; height: 20px; flex-shrink: 0;" viewBox="0 0 24 24" fill="currentColor">
+          <svg class="w-5 h-5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.971.553 1.77.85 2.781.85 3.181 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.766c0 5.485-4.464 9.948-9.969 9.948-1.748 0-3.385-.453-4.81-1.242l-5.221 1.368 1.396-5.097c-.902-1.488-1.417-3.23-1.417-5.077 0-5.485 4.464-9.949 9.969-9.949 5.505 0 9.969 4.464 9.969 9.949zm-5.705 4.129c-.211-.106-1.25-.617-1.444-.687-.194-.071-.336-.106-.477.106-.141.211-.548.687-.671.828-.124.141-.247.159-.459.053-.211-.106-.893-.329-1.701-1.049-.629-.561-1.054-1.254-1.178-1.465-.124-.212-.013-.326.092-.432.096-.095.212-.247.318-.371.106-.123.141-.212.212-.353.07-.141.035-.265-.018-.371-.053-.106-.477-1.148-.653-1.571-.172-.413-.347-.357-.477-.364-.124-.006-.265-.008-.407-.008-.141 0-.371.053-.565.265-.194.212-.741.724-.741 1.765s.759 2.048.865 2.19c.106.141 1.492 2.278 3.615 3.194.505.218.899.348 1.206.446.508.161.97.138 1.336.084.407-.061 1.25-.511 1.426-1.005.177-.494.177-.918.124-1.006-.053-.088-.194-.141-.406-.247z"/>
           </svg>
-          <span>Falar Direto Comigo (WhatsApp)</span>
+          <span>Falar Direto Comigo</span>
         </a>
       </div>
 
-      <!-- Métricas / Provas Rápidas no Hero -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl border-t border-slate-800/80 pt-8">
-        <div class="flex flex-col items-center p-3 rounded-xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-sm">
-          <span class="font-display font-extrabold text-2xl sm:text-3xl text-sky-400">+15 Anos</span>
+      <!-- Métricas / Provas Rápidas no Hero em 4 Cards Sutis -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-slate-800/80 pt-8">
+        <div class="flex flex-col items-center p-4 rounded-xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-sm">
+          <span class="font-display font-bold text-2xl sm:text-3xl text-sky-400">+15 Anos</span>
           <span class="text-xs text-slate-400 mt-1">Ambientes Críticos & TI</span>
         </div>
-        <div class="flex flex-col items-center p-3 rounded-xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-sm">
-          <span class="font-display font-extrabold text-2xl sm:text-3xl text-emerald-400">Setor Bancário</span>
+        <div class="flex flex-col items-center p-4 rounded-xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-sm">
+          <span class="font-display font-bold text-2xl sm:text-3xl text-emerald-400">Bancos</span>
           <span class="text-xs text-slate-400 mt-1">Bancos & Setor Público</span>
         </div>
-        <div class="flex flex-col items-center p-3 rounded-xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-sm">
-          <span class="font-display font-extrabold text-2xl sm:text-3xl text-sky-400">CFT-MG</span>
+        <div class="flex flex-col items-center p-4 rounded-xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-sm">
+          <span class="font-display font-bold text-2xl sm:text-3xl text-sky-400">CFT-MG</span>
           <span class="text-xs text-slate-400 mt-1">Conselho Técnico Ativo</span>
         </div>
-        <div class="flex flex-col items-center p-3 rounded-xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-sm">
-          <span class="font-display font-extrabold text-2xl sm:text-3xl text-emerald-400">Betim & Brasil</span>
+        <div class="flex flex-col items-center p-4 rounded-xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-sm">
+          <span class="font-display font-bold text-2xl sm:text-3xl text-emerald-400">Betim / MG</span>
           <span class="text-xs text-slate-400 mt-1">Grande BH e Remoto</span>
         </div>
       </div>
@@ -189,32 +213,30 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 2: Sobre Leonidas Paulino & A LPTI Tech (#sobre) -->
-  <section id="sobre" class="relative py-28 px-4 sm:px-6 lg:px-8 z-10">
-    <div class="max-w-7xl mx-auto">
+  <!-- SEÇÃO 2: Sobre Leonidas Paulino & A LPTI Tech (#sobre) - Fundo Alternado #060b16 -->
+  <section id="sobre" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-[#060b16] border-t border-slate-800/60">
+    <div class="max-w-[1200px] mx-auto">
       
       <!-- Cabeçalho da Seção -->
-      <div class="text-center max-w-3xl mx-auto mb-20">
+      <div class="text-center max-w-3xl mx-auto mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-950/50 border border-sky-500/30 text-sky-400 text-xs font-mono tracking-widest uppercase mb-4">
           <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
           Identidade & Fundamentos
         </div>
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
           Sobre Leonidas Paulino & A LPTI Tech
         </h2>
-        <p class="mt-4 text-slate-400 text-base sm:text-lg">
-          O rigor técnico e a resiliência operacional construídos em mais de uma década e meia de atuação em órgãos públicos e bancos privados, agora à disposição da sua empresa.
+        <p class="mt-3 text-slate-400 text-base sm:text-lg">
+          Rigor técnico e resiliência operacional forjados em mais de 15 anos no setor bancário e na administração pública, aplicados à sua empresa.
         </p>
       </div>
 
       <!-- BLOCO 1: Posicionamento Institucional & Perfil do Fundador -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-20">
         
-        <!-- Card Esquerda: Democratizando o Padrão... -->
-        <div class="lg:col-span-8 flex flex-col justify-between glass-card rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-xl relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-          
-          <div class="space-y-5 relative z-10">
+        <!-- Card Esquerda: Texto Direto + Diferenciais -->
+        <div class="lg:col-span-7 flex flex-col justify-between glass-card rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-xl relative overflow-hidden">
+          <div class="space-y-4 relative z-10">
             <div class="flex flex-wrap items-center gap-3">
               <span class="px-3 py-1 rounded-md text-xs font-mono font-semibold bg-sky-500/20 text-sky-300 border border-sky-500/30">
                 ESTÚDIO INDEPENDENTE DE SOFTWARE & SEGURANÇA
@@ -224,43 +246,43 @@
               </span>
             </div>
 
-            <h3 class="font-display font-bold text-2xl sm:text-3xl text-white">
+            <h3 class="font-display font-bold text-2xl text-white">
               Democratizando o Padrão de Software e Segurança Corporativa
             </h3>
 
-            <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
-              A <strong>LPTI Tech</strong> é um estúdio independente de desenvolvimento de software, infraestrutura de TI e segurança da informação concebido por <strong>Leonidas Paulino</strong>. Com sede operacional em Betim/MG, a iniciativa nasce da convicção de que <em>micro e pequenas empresas não precisam se contentar com sistemas amadores ou vulneráveis</em>.
+            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+              A <strong>LPTI Tech</strong> é um estúdio independente concebido por <strong>Leonidas Paulino</strong> em Betim/MG. Nascemos da convicção de que micro e pequenas empresas merecem a mesma solidez de sistemas e segurança de dados adotada em grandes corporações.
             </p>
 
-            <p class="text-slate-400 leading-relaxed text-base">
-              Atuando de forma transparente, ética e com emissão de Nota Fiscal, a LPTI Tech leva para cada linha de código, arquitetura de nuvem e política de acesso a mesma disciplina de missão crítica exigida por instituições financeiras de primeira linha e pela administração pública.
+            <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+              Com emissão de Nota Fiscal e governança técnica, levamos para cada linha de código, infraestrutura em nuvem e política de acesso a disciplina de missão crítica exigida por instituições financeiras de primeira linha e pelo setor público.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-5 mt-6 border-t border-slate-800/80 text-sm text-slate-300 relative z-10">
-            <div class="flex items-center gap-2">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 mt-6 border-t border-slate-800/80 text-xs sm:text-sm text-slate-300 relative z-10">
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/50 border border-slate-800/60">
               <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
               <span>Zero Fórmulas Mágicas</span>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/50 border border-slate-800/60">
               <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
               <span>Código Seguro & Documentado</span>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 p-2 rounded-lg bg-slate-900/50 border border-slate-800/60">
               <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <span>Foco em Disponibilidade e Suporte Estruturado</span>
+              <span>Disponibilidade & Suporte</span>
             </div>
           </div>
         </div>
 
         <!-- Card Direita: Perfil Leonidas Paulino -->
-        <div class="lg:col-span-4 flex flex-col justify-between glass-card rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-xl relative">
+        <div class="lg:col-span-5 flex flex-col justify-between glass-card rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-xl relative">
           <div>
             <div class="profile-avatar w-16 h-16 rounded-2xl p-[2px] mb-4 shadow-lg shadow-sky-950/50">
               <div class="w-full h-full rounded-2xl flex items-center justify-center font-display font-extrabold text-2xl">
@@ -274,7 +296,7 @@
             </p>
           </div>
           <div class="pt-4 mt-auto border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-            <span>Localização:</span>
+            <span>Sede Operacional:</span>
             <span class="text-slate-200 font-medium">Betim, Minas Gerais</span>
           </div>
         </div>
@@ -285,62 +307,68 @@
       <div class="mb-20">
         <div class="flex items-center gap-3 mb-8">
           <div class="w-8 h-[2px] bg-sky-400"></div>
-          <h3 class="font-display font-bold text-2xl sm:text-3xl text-white">
+          <h3 class="font-display font-bold text-2xl text-white">
             Formação Acadêmica & Credenciais Técnicas
           </h3>
         </div>
 
-        <div class="education-grid grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           <!-- Card 1: Tecnólogo em Segurança da Informação (Concluído) -->
-          <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800/80 hover:border-sky-500/40 transition-all duration-300 group hover:-translate-y-1">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-5 group-hover:scale-110 group-hover:border-sky-400/50 transition-all">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+          <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-sky-500/40 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-xs font-mono text-sky-400 tracking-wider uppercase font-semibold">Graduação Tecnológica</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">CONCLUÍDO</span>
+              </div>
+              <h4 class="font-display font-bold text-base text-white mt-1 mb-2">Tecnólogo em Segurança da Informação</h4>
+              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                Formação superior focada em defesa cibernética, arquitetura de identidades (IAM), governança de riscos, hardening e conformidade com a LGPD.
+              </p>
             </div>
-            <div class="flex items-center justify-between gap-2 mb-1">
-              <span class="text-xs font-mono text-sky-400 tracking-wider uppercase font-semibold">Graduação Tecnológica</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">CONCLUÍDO</span>
-            </div>
-            <h4 class="font-display font-bold text-lg text-white mt-1 mb-2">Tecnólogo em Segurança da Informação</h4>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Formação superior com foco em defesa cibernética, gestão de riscos, arquitetura de identidades (IAM), políticas de proteção de dados corporativos, hardening de infraestruturas e conformidade com a LGPD.
-            </p>
           </div>
 
           <!-- Card 2: Técnico em Informática para Internet IFMG + CFT-MG -->
-          <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-all duration-300 group hover:-translate-y-1">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-5 group-hover:scale-110 group-hover:border-emerald-400/50 transition-all">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
+          <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-xs font-mono text-emerald-400 tracking-wider uppercase font-semibold">Registro Ativo CFT-MG</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">CONCLUÍDO</span>
+              </div>
+              <h4 class="font-display font-bold text-base text-white mt-1 mb-2">Técnico em Informática para Internet (IFMG)</h4>
+              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                Concluído pelo IFMG Campus Betim, com <strong>registro ativo no CFT-MG</strong>. Base sólida em arquitetura web, redes e desenvolvimento de aplicações.
+              </p>
             </div>
-            <div class="flex items-center justify-between gap-2 mb-1">
-              <span class="text-xs font-mono text-emerald-400 tracking-wider uppercase font-semibold">Registro Ativo CFT-MG</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">CONCLUÍDO</span>
-            </div>
-            <h4 class="font-display font-bold text-lg text-white mt-1 mb-2">Técnico em Informática para Internet (IFMG)</h4>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Formação concluída pelo Instituto Federal de Minas Gerais (IFMG Campus Betim), com <strong>registro profissional ativo no Conselho Federal dos Técnicos Industriais (CFT-MG)</strong>. Base técnica sólida em arquitetura web, redes e desenvolvimento de aplicações.
-            </p>
           </div>
 
           <!-- Card 3: Técnico em Edificações IMEC -->
-          <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all duration-300 group hover:-translate-y-1">
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-5 group-hover:scale-110 group-hover:border-cyan-400/50 transition-all">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
+          <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-xs font-mono text-cyan-400 tracking-wider uppercase font-semibold">Formação Técnica</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">CONCLUÍDO</span>
+              </div>
+              <h4 class="font-display font-bold text-base text-white mt-1 mb-2">Técnico em Edificações (IMEC Betim)</h4>
+              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                Formação técnica pelo IMEC Betim. Disciplina analítica, cálculo estrutural e precisão projetual transpostos para a arquitetura de software.
+              </p>
             </div>
-            <div class="flex items-center justify-between gap-2 mb-1">
-              <span class="text-xs font-mono text-cyan-400 tracking-wider uppercase font-semibold">Formação Técnica</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold">CONCLUÍDO</span>
-            </div>
-            <h4 class="font-display font-bold text-lg text-white mt-1 mb-2">Técnico em Edificações (IMEC Betim)</h4>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              Formação concluída pelo Instituto Mineiro de Educação e Cultura (IMEC Betim). Disciplina analítica, cálculo estrutural e leitura rigorosa de projetos, transpostos como diferencial metodológico na engenharia de sistemas.
-            </p>
           </div>
 
         </div>
@@ -354,134 +382,134 @@
         </div>
       </div>
 
-      <!-- BLOCO 3: Linha do Tempo Corporativa (Prova de Autoridade) -->
+      <!-- BLOCO 3: Linha do Tempo Corporativa -->
       <div>
         <div class="flex items-center gap-3 mb-10">
           <div class="w-8 h-[2px] bg-emerald-400"></div>
           <div>
-            <h3 class="font-display font-bold text-2xl sm:text-3xl text-white">
+            <h3 class="font-display font-bold text-2xl text-white">
               Trajetória Corporativa & Ambientes Críticos
             </h3>
-            <p class="text-sm text-slate-400 mt-1">Mais de 15 anos protegendo dados, garantindo disponibilidade e gerindo infraestruturas vitais.</p>
+            <p class="text-sm text-slate-400 mt-0.5">Mais de 15 anos protegendo dados, garantindo disponibilidade e gerindo infraestruturas vitais.</p>
           </div>
         </div>
 
-        <div class="timeline-container relative pl-6 sm:pl-8 border-l-2 border-slate-800 flex flex-col gap-6">
+        <div class="relative pl-6 sm:pl-8 border-l-2 border-cyan-500/30 space-y-6">
           
           <!-- Item 1: Atual | Administração Pública Estadual -->
           <div class="relative group">
-            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-emerald-400 border-4 border-[#030712] shadow-[0_0_12px_#34d399] transition-transform group-hover:scale-125"></div>
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-emerald-400 border-4 border-[#060b16] shadow-[0_0_12px_#34d399] transition-transform group-hover:scale-125"></div>
             
-            <div class="glass-card timeline-card p-6 sm:p-8 rounded-2xl border border-slate-800/80 group-hover:border-emerald-500/40 transition-all duration-300">
-              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800/80 group-hover:border-emerald-500/40 transition-all duration-300">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-950/60 text-emerald-400 border border-emerald-500/40">
                   <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ATUAL • ADMINISTRAÇÃO PÚBLICA ESTADUAL
                 </span>
                 <span class="text-xs font-mono text-slate-400">Belo Horizonte / MG</span>
               </div>
 
-              <h4 class="font-display font-bold text-xl sm:text-2xl text-white">
+              <h4 class="font-display font-bold text-lg sm:text-xl text-white">
                 Administração Pública Estadual (via MGS)
               </h4>
-              <p class="text-sm font-medium text-sky-400 mb-3">Técnico de Suporte & Administração de Identidades e Acessos (IAM)</p>
+              <p class="text-xs sm:text-sm font-medium text-sky-400 mb-3">Técnico de Suporte & Administração de Identidades e Acessos (IAM)</p>
               
-              <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-                Atuação em ambiente corporativo público. Responsável pela gestão de identidades e acessos com <strong>Active Directory (AD), LDAP e Microsoft Entra ID (Azure AD)</strong>, controle de permissões e privilégios (RBAC), automação de processos e suporte nível 2/3.
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Gestão de identidades corporativas com <strong>Active Directory (AD), LDAP e Microsoft Entra ID</strong>, controle de permissões e privilégios (RBAC), automação de processos e suporte nível 2/3.
               </p>
 
               <div class="flex flex-wrap gap-2 text-xs font-mono">
-                <span class="tech-badge">Microsoft Entra ID</span>
-                <span class="tech-badge">Active Directory / LDAP</span>
-                <span class="tech-badge">IAM & RBAC</span>
-                <span class="tech-badge">Automação & Suporte N2/N3</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Microsoft Entra ID</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Active Directory / LDAP</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">IAM & RBAC</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Automação & Suporte N2/N3</span>
               </div>
             </div>
           </div>
 
           <!-- Item 2: 2013 – 2017 | Setor Bancário — Itaú BBA -->
           <div class="relative group">
-            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-sky-400 border-4 border-[#030712] shadow-[0_0_12px_#38bdf8] transition-transform group-hover:scale-125"></div>
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-sky-400 border-4 border-[#060b16] shadow-[0_0_12px_#38bdf8] transition-transform group-hover:scale-125"></div>
             
-            <div class="glass-card timeline-card p-6 sm:p-8 rounded-2xl border border-slate-800/80 group-hover:border-sky-500/40 transition-all duration-300">
-              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800/80 group-hover:border-sky-500/40 transition-all duration-300">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-sky-950/60 text-sky-400 border border-sky-500/40">
                   2013 – 2017 • SETOR BANCÁRIO (INVESTMENT BANKING)
                 </span>
                 <span class="text-xs font-mono text-slate-400">Belo Horizonte / MG</span>
               </div>
 
-              <h4 class="font-display font-bold text-xl sm:text-2xl text-white">
+              <h4 class="font-display font-bold text-lg sm:text-xl text-white">
                 Itaú BBA (via HP / Enterprise Services & Algar Telecom)
               </h4>
-              <p class="text-sm font-medium text-emerald-400 mb-3">Analista de Suporte Sênior & Infraestrutura de Missão Crítica</p>
+              <p class="text-xs sm:text-sm font-medium text-emerald-400 mb-3">Analista de Suporte Sênior & Infraestrutura de Missão Crítica</p>
               
-              <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-                Atendimento direto à diretoria, executivos de mesa de operações e incidentes críticos no maior banco de atacado e investimentos da América Latina. Operação sob rigorosas normas de conformidade financeira, sigilo bancário, resposta emergencial a falhas e contingência de estações financeiras de alta volatilidade.
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Atendimento a executivos e incidentes de missão crítica no maior banco de atacado e investimentos da América Latina. Estrito cumprimento de SLA, sigilo bancário e contingência de mesas de operações.
               </p>
 
               <div class="flex flex-wrap gap-2 text-xs font-mono">
-                <span class="tech-badge">SLA Financeiro Rígido</span>
-                <span class="tech-badge">Suporte a Executivos</span>
-                <span class="tech-badge">Conformidade Bancária</span>
-                <span class="tech-badge">HP Enterprise Services</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">SLA Financeiro Rígido</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Suporte Executivo</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Conformidade Bancária</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">HP Enterprise Services</span>
               </div>
             </div>
           </div>
 
           <!-- Item 3: 2009 – 2013 | Caixa Econômica Federal & SAT Informática -->
           <div class="relative group">
-            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 border-4 border-[#030712] transition-transform group-hover:scale-125"></div>
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 border-4 border-[#060b16] transition-transform group-hover:scale-125"></div>
             
-            <div class="glass-card timeline-card p-6 sm:p-8 rounded-2xl border border-slate-800/80 group-hover:border-cyan-500/40 transition-all duration-300">
-              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800/80 group-hover:border-cyan-500/40 transition-all duration-300">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-950/60 text-cyan-400 border border-cyan-500/40">
                   2009 – 2013 • INFRAESTRUTURA BANCÁRIA & CAMPO
                 </span>
                 <span class="text-xs font-mono text-slate-400">Minas Gerais</span>
               </div>
 
-              <h4 class="font-display font-bold text-xl sm:text-2xl text-white">
+              <h4 class="font-display font-bold text-lg sm:text-xl text-white">
                 Caixa Econômica Federal (CTIS) & SAT Informática
               </h4>
-              <p class="text-sm font-medium text-sky-400 mb-3">Suporte Técnico Especializado em Campo & Coordenação de Equipes</p>
+              <p class="text-xs sm:text-sm font-medium text-sky-400 mb-3">Suporte Especializado em Campo & Coordenação Técnica</p>
               
-              <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-                Manutenção e suporte corretivo/preventivo em agências bancárias da Caixa Econômica Federal com controle estrito de SLA. Na SAT Informática, coordenação de equipes em atendimentos de infraestrutura para corporações de grande porte (incluindo clientes industriais de renome como FEMSA).
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Suporte em agências bancárias da CEF com controle estrito de SLA. Coordenação de equipes de infraestrutura para corporações e plantas industriais (incluindo FEMSA).
               </p>
 
               <div class="flex flex-wrap gap-2 text-xs font-mono">
-                <span class="tech-badge">Manutenção sob SLA</span>
-                <span class="tech-badge">Coordenação Técnica</span>
-                <span class="tech-badge">Hardware & Rede Bancária</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Manutenção sob SLA</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Coordenação Técnica</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Hardware & Rede Bancária</span>
               </div>
             </div>
           </div>
 
           <!-- Item 4: 1996 – 2009 | Operações & Indústria — Stellantis (FIAT) -->
           <div class="relative group">
-            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-[#030712] transition-transform group-hover:scale-125"></div>
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-[#060b16] transition-transform group-hover:scale-125"></div>
             
-            <div class="glass-card timeline-card p-6 sm:p-8 rounded-2xl border border-slate-800/80 group-hover:border-slate-600 transition-all duration-300">
-              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="glass-card p-6 sm:p-7 rounded-2xl border border-slate-800/80 group-hover:border-slate-600 transition-all duration-300">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-800/80 text-slate-300 border border-slate-700">
                   1996 – 2009 • BASE OPERACIONAL, VAREJO & INDÚSTRIA AUTOMOTIVA
                 </span>
                 <span class="text-xs font-mono text-slate-400">Betim e Região / MG</span>
               </div>
 
-              <h4 class="font-display font-bold text-xl sm:text-2xl text-white">
+              <h4 class="font-display font-bold text-lg sm:text-xl text-white">
                 Stellantis (FIAT Automóveis), DMA Distribuidora e Carrefour
               </h4>
-              <p class="text-sm font-medium text-slate-400 mb-3">Processos Industriais, Liderança de Equipes & Operações Comerciais</p>
+              <p class="text-xs sm:text-sm font-medium text-slate-400 mb-3">Processos Industriais, Liderança de Equipes & Operações Comerciais</p>
               
-              <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-                Vivência de chão de fábrica na planta automobilística da FIAT em Betim e em gigantes do varejo nacional. Essa base sólida forneceu disciplina rigorosa em cadeia de suprimentos, logística e gestão de pessoas — o que hoje fundamenta o <strong>entendimento prático e cirúrgico de operações de balcão, frente de caixa (PDV) e controle de estoque</strong> aplicados nas soluções de software da LPTI Tech.
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Vivência de fábrica na FIAT e em redes varejistas. Disciplina em logística e estoques que fundamenta o entendimento prático de <strong>frente de caixa (PDV) e operação comercial</strong> nos softwares da LPTI Tech.
               </p>
 
               <div class="flex flex-wrap gap-2 text-xs font-mono">
-                <span class="tech-badge">Domínio Real de PDV</span>
-                <span class="tech-badge">Fluxo de Estoque</span>
-                <span class="tech-badge">Disciplina Industrial</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Domínio Real de PDV</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Fluxo de Estoque</span>
+                <span class="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Disciplina Industrial</span>
               </div>
             </div>
           </div>
@@ -492,104 +520,102 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 3: Vitrine de Projetos (#projetos) -->
-  <section id="projetos" class="relative py-28 px-4 sm:px-6 lg:px-8 z-10 bg-slate-950/40">
-    <div class="max-w-7xl mx-auto">
+  <!-- SEÇÃO 3: Vitrine de Projetos (#projetos) - Fundo #030712 com Divisor Sutil -->
+  <section id="projetos" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-[#030712] border-t border-slate-800/60">
+    <div class="max-w-[1200px] mx-auto">
       
       <!-- Cabeçalho da Seção -->
-      <div class="text-center max-w-3xl mx-auto mb-20">
+      <div class="text-center max-w-3xl mx-auto mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/50 border border-emerald-500/30 text-emerald-400 text-xs font-mono tracking-widest uppercase mb-4">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
           Soluções em Ação
         </div>
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
           Vitrine de Projetos & Software Proprietário
         </h2>
-        <p class="mt-4 text-slate-400 text-base sm:text-lg">
-          Aplicações desenhadas com obsessão por performance, proteção de dados e facilidade real de operação para o usuário final.
+        <p class="mt-3 text-slate-400 text-base sm:text-lg">
+          Aplicações desenhadas com foco em performance, proteção de dados e facilidade real de operação para o usuário final.
         </p>
       </div>
 
       <!-- PROJETO DESTAQUE: Gestor MEI (SaaS) -->
-      <div class="glass-card rounded-3xl p-8 sm:p-12 mb-12 border border-sky-500/30 bg-gradient-to-br from-slate-900/90 via-slate-950/95 to-slate-900/70 shadow-2xl relative overflow-hidden group">
-        <div class="absolute -top-32 -right-32 w-80 h-80 bg-sky-500/15 rounded-full blur-3xl pointer-events-none group-hover:bg-sky-500/25 transition-all duration-700" aria-hidden="true"></div>
-        
+      <div class="glass-card rounded-3xl p-8 sm:p-10 mb-12 border border-sky-500/30 bg-gradient-to-br from-slate-900/90 via-slate-950/95 to-slate-900/70 shadow-2xl relative overflow-hidden group">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          <div class="lg:col-span-7 space-y-6">
-            <div class="flex flex-wrap items-center gap-3" style="gap: 0.75rem;">
+          <div class="lg:col-span-7 space-y-5">
+            <div class="flex flex-wrap items-center gap-3">
               <span class="px-3 py-1.5 rounded-md text-xs font-mono font-bold bg-sky-500/20 text-sky-300 border border-sky-500/40">
                 PROJETO DESTAQUE • SAAS PROPRIETÁRIO
               </span>
-              <span class="status-badge-pilot px-3 py-1.5 rounded-full text-xs font-mono font-semibold">
+              <span class="px-3 py-1.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/40">
                 EM OPERAÇÃO PILOTO
               </span>
             </div>
 
-            <h3 class="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+            <h3 class="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight">
               Gestor MEI — Sistema de Gestão & PDV
             </h3>
 
-            <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-              Plataforma SaaS completa de ponto de venda ultrarrápido, módulo de delivery próprio sem comissões abusivas, controle fino de estoque e importação automática de NF-e via XML. 
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Plataforma SaaS completa de ponto de venda ultrarrápido, cardápio digital para delivery sem taxas abusivas, controle fino de estoque e importação automática de NF-e via XML.
             </p>
 
             <!-- Funcionalidades-chave em grade -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
               <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="p-2 rounded-lg bg-sky-500/10 text-sky-400 shrink-0">
-                  <svg class="w-5 h-5 shrink-0" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
+                  <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
                 <div>
                   <h4 class="text-sm font-semibold text-white">PDV Ultrarrápido</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Venda em poucos cliques, impressão térmica e leitura de código de barras.</p>
+                  <p class="text-xs text-slate-400 mt-0.5">Venda ágil, impressão térmica e leitura de código de barras.</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
-                  <svg class="w-5 h-5 shrink-0" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                  <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
                 <div>
                   <h4 class="text-sm font-semibold text-white">Proteção Fiscal (Teto MEI)</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Monitoramento preditivo de receita anual para evitar desenquadramento fiscal acidental.</p>
+                  <p class="text-xs text-slate-400 mt-0.5">Monitoramento preditivo de receita anual para evitar desenquadramento.</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="p-2 rounded-lg bg-sky-500/10 text-sky-400 shrink-0">
-                  <svg class="w-5 h-5 shrink-0" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
+                  <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
                 </div>
                 <div>
                   <h4 class="text-sm font-semibold text-white">Delivery Sem Comissões</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Cardápio digital conectado direto ao WhatsApp com controle de pedidos em tempo real.</p>
+                  <p class="text-xs text-slate-400 mt-0.5">Cardápio digital integrado ao WhatsApp com pedidos em tempo real.</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
-                  <svg class="w-5 h-5 shrink-0" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                  <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
                 <div>
                   <h4 class="text-sm font-semibold text-white">Importador XML NF-e</h4>
-                  <p class="text-xs text-slate-400 mt-0.5">Entrada instantânea de mercadorias no estoque cadastrando produtos automaticamente.</p>
+                  <p class="text-xs text-slate-400 mt-0.5">Entrada rápida de mercadorias cadastrando itens automaticamente.</p>
                 </div>
               </div>
             </div>
 
             <!-- Botão Link Externo -->
-            <div class="pt-4 flex flex-wrap items-center gap-4">
-              <a href="https://www.lptitech.com.br/" target="_blank" rel="noopener noreferrer" class="btn-gestor-mei inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold">
+            <div class="pt-3 flex flex-wrap items-center gap-4">
+              <a href="https://www.lptitech.com.br/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-sky-400 to-cyan-300 hover:from-sky-300 hover:to-cyan-200 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:-translate-y-0.5">
                 <span>Acessar Plataforma Gestor MEI</span>
-                <svg class="w-4 h-4 shrink-0" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
@@ -597,7 +623,7 @@
             </div>
           </div>
 
-          <!-- Preview Mockup Tecnológico do Gestor MEI -->
+          <!-- Preview Mockup do Gestor MEI -->
           <div class="lg:col-span-5">
             <div class="relative rounded-2xl bg-slate-950 border border-slate-700/80 p-5 shadow-2xl overflow-hidden">
               <div class="flex items-center justify-between pb-4 border-b border-slate-800">
@@ -610,15 +636,15 @@
                 <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">ONLINE</span>
               </div>
 
-              <!-- Simulação de Dashboard Minimalista -->
+              <!-- Simulação de Dashboard -->
               <div class="pt-5 space-y-4">
                 <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
                   <div class="flex justify-between items-center mb-2">
                     <span class="text-xs text-slate-400 font-mono">TETO ANUAL MEI (2026)</span>
                     <span class="text-xs font-mono text-emerald-400 font-bold">64.2% UTILIZADO</span>
                   </div>
-                  <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                    <div class="bg-gradient-to-r from-sky-400 to-emerald-400 h-2.5 rounded-full" style="width: 64.2%"></div>
+                  <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                    <div class="bg-gradient-to-r from-sky-400 to-emerald-400 h-2 rounded-full" style="width: 64.2%"></div>
                   </div>
                   <div class="flex justify-between text-[11px] text-slate-400 mt-2 font-mono">
                     <span>Faturamento Seguro</span>
@@ -644,11 +670,11 @@
                     <div class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></div>
                     <span class="text-xs text-sky-200 font-medium">Cardápio Digital Delivery Ativo</span>
                   </div>
-                  <span class="text-xs font-mono text-sky-400">0% Comissão</span>
+                  <span class="text-xs font-mono text-sky-400">0% Taxa</span>
                 </div>
               </div>
             </div>
-            <p class="text-[11px] text-slate-500 font-mono text-center mt-2">Interface e métricas meramente ilustrativas do sistema Gestor MEI.</p>
+            <p class="text-[11px] text-slate-500 font-mono text-center mt-2">Demonstração conceitual da interface do Gestor MEI.</p>
           </div>
 
         </div>
@@ -660,70 +686,70 @@
         <!-- PROJETO 2: Sistemas Web de Cálculo & Estruturas -->
         <div class="glass-card rounded-3xl p-8 border border-slate-800/80 hover:border-sky-500/40 transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center justify-between mb-5">
               <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-sky-500/10 text-sky-300 border border-sky-500/20">
-                PROJETO TÉCNICO • EDIFICAÇÕES & DESENVOLVIMENTO WEB
+                PROJETO TÉCNICO • ENGENHARIA & SOFTWARE
               </span>
-              <div class="w-10 h-10 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5 shrink-0" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </div>
             </div>
 
-            <h3 class="font-display font-bold text-2xl text-white mb-3">
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2.5">
               Sistemas Web de Dimensionamento Estrutural
             </h3>
 
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              Soluções computacionais personalizadas para cálculo técnico, dimensionamento de lajes e quantitativos estruturais. Projeto que integra de forma pioneira a formação em <strong>Edificações (IMEC)</strong> com a precisão algorítmica do <strong>desenvolvimento de software</strong>.
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
+              Aplicações web para cálculo técnico e dimensionamento automatizado, integrando a formação analítica em <strong>Edificações (IMEC)</strong> com a precisão algorítmica do <strong>desenvolvimento de software</strong>.
             </p>
 
-            <ul class="space-y-2.5 text-sm text-slate-400 mb-6 font-mono">
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400 mb-6 font-mono">
               <li class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
                 <span>Cálculo automatizado de cargas e flechas em lajes</span>
               </li>
               <li class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-                <span>Exportação de memoriais de cálculo e relatórios técnicos</span>
+                <span>Geração de memoriais de cálculo e relatórios técnicos</span>
               </li>
               <li class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-                <span>Interface web responsiva com validação estrita de inputs</span>
+                <span>Interface responsiva com validação matemática estrita</span>
               </li>
             </ul>
           </div>
 
-          <div class="pt-6 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
-            <span>Tecnologias: JavaScript • Web APIs • Canvas</span>
-            <span class="pill-badge pill-badge-cyan">Algoritmos Validados</span>
+          <div class="pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>JavaScript • Web APIs • Canvas</span>
+            <span class="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Algoritmos Validados</span>
           </div>
         </div>
 
         <!-- PROJETO 3: Arquitetura IAM, Segurança & Automação -->
         <div class="glass-card rounded-3xl p-8 border border-slate-800/80 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between group">
           <div>
-            <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center justify-between mb-5">
               <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
                 INFRAESTRUTURA & SEGURANÇA CORPORATIVA
               </span>
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5 shrink-0" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
             </div>
 
-            <h3 class="font-display font-bold text-2xl text-white mb-3">
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2.5">
               Arquitetura IAM, Hardening & Automação PowerShell
             </h3>
 
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              Projetos de infraestrutura e segurança voltados para consolidação de identidades corporativas, automação de provisioning de usuários via scripts PowerShell e implantação de redes empresariais com Wi-Fi gerenciado de alta densidade.
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
+              Consolidação de identidades corporativas, automação de provisioning de usuários via scripts PowerShell e implantação de redes empresariais seguras com controle de acessos.
             </p>
 
-            <ul class="space-y-2.5 text-sm text-slate-400 mb-6 font-mono">
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-400 mb-6 font-mono">
               <li class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                 <span>Scripts de provisionamento e auditoria em PowerShell</span>
@@ -734,14 +760,14 @@
               </li>
               <li class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span>Políticas de Zero-Trust e controle de privilégios mínimos</span>
+                <span>Políticas de Zero Trust e controle de privilégios mínimos</span>
               </li>
             </ul>
           </div>
 
-          <div class="pt-6 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
-            <span>Ambientes: Azure AD • On-Premises • Hybrid</span>
-            <span class="pill-badge pill-badge-emerald">Zero Trust</span>
+          <div class="pt-5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>Azure AD • On-Premises • Hybrid</span>
+            <span class="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">Zero Trust</span>
           </div>
         </div>
 
@@ -750,66 +776,66 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 4: Pilares de Atuação (#atuacao) -->
-  <section id="atuacao" class="relative py-28 px-4 sm:px-6 lg:px-8 z-10">
-    <div class="max-w-7xl mx-auto">
+  <!-- SEÇÃO 4: Pilares de Atuação (#atuacao) - Fundo #060b16 com Divisor Sutil -->
+  <section id="atuacao" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-[#060b16] border-t border-slate-800/60">
+    <div class="max-w-[1200px] mx-auto">
       
       <!-- Cabeçalho da Seção -->
-      <div class="text-center max-w-3xl mx-auto mb-20">
+      <div class="text-center max-w-3xl mx-auto mb-16">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-950/50 border border-sky-500/30 text-sky-400 text-xs font-mono tracking-widest uppercase mb-4">
           <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
           Especialidades Técnicas
         </div>
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
           Nossos Três Pilares de Atuação
         </h2>
-        <p class="mt-4 text-slate-400 text-base sm:text-lg">
+        <p class="mt-3 text-slate-400 text-base sm:text-lg">
           Soluções completas desenhadas para eliminar gargalos manuais, mitigar riscos cibernéticos e estruturar empresas para crescer com estabilidade.
         </p>
       </div>
 
-      <!-- Grid de 3 Cards Minimalistas com Brilho Especular -->
+      <!-- Grid de 3 Cards com Ícones em Caixas Destacadas -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <!-- Pilar 1: Desenvolvimento de Software & SaaS -->
-        <div class="glass-card p-8 rounded-3xl border border-slate-800/80 hover:border-sky-500/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2">
+        <div class="glass-card p-8 rounded-3xl border border-slate-800/80 hover:border-sky-500/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-6 group-hover:scale-110 group-hover:bg-sky-500/20 transition-all">
-              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-all">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </div>
             
             <span class="text-xs font-mono text-sky-400 tracking-wider uppercase font-semibold">Pilar 01</span>
-            <h3 class="font-display font-bold text-2xl text-white mt-1 mb-4">
+            <h3 class="font-display font-bold text-xl text-white mt-1 mb-3">
               Desenvolvimento de Software & SaaS
             </h3>
 
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Desenvolvimento de sistemas web sob medida, plataformas SaaS escaláveis, dashboards executivos e automação inteligente de processos manuais.
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
+              Desenvolvimento de sistemas sob medida, plataformas SaaS escaláveis, dashboards e automação inteligente de processos manuais.
             </p>
 
-            <ul class="space-y-3 text-sm text-slate-400">
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-sky-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Sistemas web completos e aplicações sob demanda</span>
               </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-sky-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                <span>APIs REST seguras e integrações de pagamento/fiscal</span>
+                <span>APIs REST seguras e integrações financeiras</span>
               </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-sky-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Dashboards de tomada de decisão em tempo real</span>
               </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-sky-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Automação de rotinas com scripts e microserviços</span>
@@ -817,8 +843,8 @@
             </ul>
           </div>
 
-          <div class="pt-6 mt-8 border-t border-slate-800/80">
-            <a href="#contato" class="inline-flex items-center gap-2 text-sm font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+          <div class="pt-5 mt-6 border-t border-slate-800/80">
+            <a href="#contato" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-sky-400 hover:text-sky-300 transition-colors">
               <span>Planejar meu sistema</span>
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -828,44 +854,44 @@
         </div>
 
         <!-- Pilar 2: Segurança da Informação & IAM -->
-        <div class="glass-card p-8 rounded-3xl border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2">
+        <div class="glass-card p-8 rounded-3xl border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
-              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-all">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
             
             <span class="text-xs font-mono text-emerald-400 tracking-wider uppercase font-semibold">Pilar 02</span>
-            <h3 class="font-display font-bold text-2xl text-white mt-1 mb-4">
+            <h3 class="font-display font-bold text-xl text-white mt-1 mb-3">
               Segurança da Informação & IAM
             </h3>
 
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Implementação de gestão de identidades e acessos (IAM), proteção de dados contra vazamentos, hardening de sistemas e conformidade com a LGPD.
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
+              Gestão de identidades e acessos (IAM), proteção de dados corporativos, hardening de estações e adequação prática à LGPD.
             </p>
 
-            <ul class="space-y-3 text-sm text-slate-400">
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Gestão de identidades (Active Directory, Azure AD / Entra)</span>
               </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Hardening de estações e servidores contra invasões</span>
               </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Políticas de privilégios mínimos e controle de acesso (RBAC)</span>
               </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Diagnóstico de segurança e adequação prática à LGPD</span>
@@ -873,8 +899,8 @@
             </ul>
           </div>
 
-          <div class="pt-6 mt-8 border-t border-slate-800/80">
-            <a href="#contato" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
+          <div class="pt-5 mt-6 border-t border-slate-800/80">
+            <a href="#contato" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
               <span>Proteger minha empresa</span>
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -884,53 +910,53 @@
         </div>
 
         <!-- Pilar 3: Consultoria de Infraestrutura & TI -->
-        <div class="glass-card p-8 rounded-3xl border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2">
+        <div class="glass-card p-8 rounded-3xl border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
-              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-all">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
               </svg>
             </div>
             
             <span class="text-xs font-mono text-cyan-400 tracking-wider uppercase font-semibold">Pilar 03</span>
-            <h3 class="font-display font-bold text-2xl text-white mt-1 mb-4">
+            <h3 class="font-display font-bold text-xl text-white mt-1 mb-3">
               Consultoria de Infraestrutura & TI
             </h3>
 
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Estruturação física e lógica de redes, implantação de e-mail corporativo com domínio próprio, rotinas de backup em nuvem com proteção contra ransomware e suporte avançado.
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
+              Estruturação física e lógica de redes, implantação de e-mail com domínio próprio, rotinas de backup com proteção anti-ransomware e suporte avançado.
             </p>
 
-            <ul class="space-y-3 text-sm text-slate-400">
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Configuração de e-mail profissional com domínio próprio</span>
               </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Estruturação de redes locais, roteamento e Wi-Fi corporativo</span>
               </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
                 <span>Rotinas automatizadas de backup em nuvem e recuperação</span>
               </li>
-              <li class="flex items-start gap-2.5">
-                <svg class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                <span>Consultoria para compra e upgrade assertivo de equipamentos</span>
+                <span>Consultoria para aquisição e upgrade de infraestrutura</span>
               </li>
             </ul>
           </div>
 
-          <div class="pt-6 mt-8 border-t border-slate-800/80">
-            <a href="#contato" class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
+          <div class="pt-5 mt-6 border-t border-slate-800/80">
+            <a href="#contato" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
               <span>Consultar infraestrutura</span>
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -944,9 +970,9 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 5: Contato & Rodapé (#contato) -->
-  <section id="contato" class="relative py-28 px-4 sm:px-6 lg:px-8 z-10 bg-gradient-to-b from-transparent to-[#020617]">
-    <div class="max-w-7xl mx-auto">
+  <!-- SEÇÃO 5: Contato & Rodapé (#contato) - Fundo #030712 com Gradiente Suave -->
+  <section id="contato" class="relative py-24 px-4 sm:px-6 lg:px-8 z-10 bg-gradient-to-b from-[#030712] to-[#020617] border-t border-slate-800/60">
+    <div class="max-w-[1200px] mx-auto">
       
       <!-- Cabeçalho da Seção -->
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -954,47 +980,47 @@
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
           Conexão Direta
         </div>
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
           Vamos Estruturar o Futuro do Seu Projeto?
         </h2>
-        <p class="mt-4 text-slate-400 text-base sm:text-lg">
+        <p class="mt-3 text-slate-400 text-base sm:text-lg">
           Converse diretamente com Leonidas Paulino. Sem intermediários, sem termos vagos: avaliação técnica e compromisso com o resultado.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Coluna Esquerda: Canais Diretos -->
-        <div class="lg:col-span-5 space-y-6">
+        <!-- Coluna Esquerda: Canais Diretos (5 colunas) -->
+        <div class="lg:col-span-5 space-y-5">
           
           <!-- Card WhatsApp Direto -->
           <a href="https://wa.me/5531988004560?text=Ol%C3%A1%2C%20Leonidas!%20Gostaria%20de%20conversar%20sobre%20desenvolvimento%20de%20software%2Fseguran%C3%A7a%20para%20minha%20empresa." 
              target="_blank" 
              rel="noopener noreferrer" 
-             class="glass-card p-6 rounded-2xl border border-emerald-500/30 hover:border-emerald-400 flex items-center gap-5 transition-all duration-300 group hover:-translate-y-1 bg-gradient-to-r from-emerald-950/40 via-slate-900/60 to-slate-900/40">
-            <div class="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7 shrink-0" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+             class="glass-card p-6 rounded-2xl border border-emerald-500/30 hover:border-emerald-400 flex items-center gap-4 transition-all duration-300 group hover:-translate-y-0.5 bg-gradient-to-r from-emerald-950/40 via-slate-900/60 to-slate-900/40">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform">
+              <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.971.553 1.77.85 2.781.85 3.181 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.766c0 5.485-4.464 9.948-9.969 9.948-1.748 0-3.385-.453-4.81-1.242l-5.221 1.368 1.396-5.097c-.902-1.488-1.417-3.23-1.417-5.077 0-5.485 4.464-9.949 9.969-9.949 5.505 0 9.969 4.464 9.969 9.949zm-5.705 4.129c-.211-.106-1.25-.617-1.444-.687-.194-.071-.336-.106-.477.106-.141.211-.548.687-.671.828-.124.141-.247.159-.459.053-.211-.106-.893-.329-1.701-1.049-.629-.561-1.054-1.254-1.178-1.465-.124-.212-.013-.326.092-.432.096-.095.212-.247.318-.371.106-.123.141-.212.212-.353.07-.141.035-.265-.018-.371-.053-.106-.477-1.148-.653-1.571-.172-.413-.347-.357-.477-.364-.124-.006-.265-.008-.407-.008-.141 0-.371.053-.565.265-.194.212-.741.724-.741 1.765s.759 2.048.865 2.19c.106.141 1.492 2.278 3.615 3.194.505.218.899.348 1.206.446.508.161.97.138 1.336.084.407-.061 1.25-.511 1.426-1.005.177-.494.177-.918.124-1.006-.053-.088-.194-.141-.406-.247z"/>
               </svg>
             </div>
             <div>
               <span class="text-xs font-mono text-emerald-400 uppercase tracking-wider font-semibold">Atendimento Instantâneo</span>
-              <h3 class="font-display font-bold text-lg text-white">WhatsApp Direto</h3>
+              <h3 class="font-display font-bold text-base text-white">WhatsApp Direto</h3>
               <p class="text-slate-300 text-sm mt-0.5 font-mono">(31) 98800-4560</p>
             </div>
           </a>
 
           <!-- Card E-mail Oficial com Ação de Copiar -->
           <div class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-sky-500/40 flex items-center justify-between gap-4 transition-all duration-300 group">
-            <div class="flex items-center gap-5">
-              <div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0 group-hover:scale-110 transition-transform">
-                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0 group-hover:scale-105 transition-transform">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <div>
                 <span class="text-xs font-mono text-sky-400 uppercase tracking-wider font-semibold">E-mail Corporativo</span>
-                <h3 class="font-display font-bold text-lg text-white">Mensagem Formal</h3>
+                <h3 class="font-display font-bold text-base text-white">Mensagem Formal</h3>
                 <a href="mailto:contato@lptitech.com.br" class="text-slate-300 hover:text-white text-sm font-mono transition-colors">contato@lptitech.com.br</a>
               </div>
             </div>
@@ -1012,27 +1038,27 @@
           <a href="https://www.linkedin.com/in/leonidas-paulino-ti" 
              target="_blank" 
              rel="noopener noreferrer" 
-             class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-sky-500/40 flex items-center gap-5 transition-all duration-300 group hover:-translate-y-1">
-            <div class="w-14 h-14 rounded-2xl bg-sky-600/10 border border-sky-600/20 flex items-center justify-center text-sky-400 shrink-0 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7 shrink-0" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+             class="glass-card p-6 rounded-2xl border border-slate-800/80 hover:border-sky-500/40 flex items-center gap-4 transition-all duration-300 group hover:-translate-y-0.5">
+            <div class="w-12 h-12 rounded-xl bg-sky-600/10 border border-sky-600/20 flex items-center justify-center text-sky-400 shrink-0 group-hover:scale-105 transition-transform">
+              <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.94 0-1.7.77-1.7 1.71s.76 1.71 1.7 1.71 1.7-.77 1.7-1.71-.76-1.71-1.7-1.71z"/>
               </svg>
             </div>
             <div>
               <span class="text-xs font-mono text-sky-400 uppercase tracking-wider font-semibold">Rede Profissional</span>
-              <h3 class="font-display font-bold text-lg text-white">LinkedIn de Leonidas Paulino</h3>
-              <p class="text-slate-300 text-sm mt-0.5">linkedin.com/in/leonidas-paulino-ti</p>
+              <h3 class="font-display font-bold text-base text-white">LinkedIn de Leonidas Paulino</h3>
+              <p class="text-slate-300 text-xs mt-0.5 font-mono">linkedin.com/in/leonidas-paulino-ti</p>
             </div>
           </a>
 
           <!-- Box de Garantia de Resposta -->
-          <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
             <div class="flex items-start gap-3">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 mt-1.5 shadow-[0_0_8px_#34d399]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 mt-1 shadow-[0_0_8px_#34d399]"></span>
               <div>
                 <h4 class="text-sm font-semibold text-white">Disponibilidade & Atendimento</h4>
                 <p class="text-xs text-slate-400 leading-relaxed mt-1">
-                  Atendimento presencial pré-agendado em <strong>Betim, Belo Horizonte, Contagem e Região Metropolitana</strong>. Atendimento remoto estruturado para clientes em todo o território nacional.
+                  Atendimento presencial em <strong>Betim, Belo Horizonte, Contagem e Grande BH</strong>. Atendimento remoto estruturado para todo o Brasil.
                 </p>
               </div>
             </div>
@@ -1040,44 +1066,44 @@
 
         </div>
 
-        <!-- Coluna Direita: Formulário Rápido de Contato -->
+        <!-- Coluna Direita: Formulário Rápido de Contato (7 colunas) -->
         <div class="lg:col-span-7">
-          <div class="glass-card p-8 sm:p-10 rounded-3xl border border-slate-800/80 bg-slate-950/70 shadow-2xl relative">
-            <h3 class="font-display font-bold text-2xl text-white mb-2">Envie uma Mensagem</h3>
-            <p class="text-slate-400 text-sm mb-6">Preencha os campos abaixo para receber um diagnóstico preliminar ou agendar uma conversa técnica.</p>
+          <div class="glass-card p-8 sm:p-9 rounded-3xl border border-slate-800/80 bg-slate-950/80 shadow-2xl relative">
+            <h3 class="font-display font-bold text-2xl text-white mb-1.5">Envie uma Mensagem</h3>
+            <p class="text-slate-400 text-xs sm:text-sm mb-6">Preencha os campos abaixo para receber uma avaliação técnica ou agendar uma conversa preliminar.</p>
 
-            <form id="contact-form" class="space-y-5">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="name" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">Seu Nome *</label>
+                  <label for="name" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1.5">Seu Nome *</label>
                   <input type="text" id="name" name="name" required placeholder="Ex.: Marcelo Souza" 
-                         class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
+                         class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
                 </div>
 
                 <div>
-                  <label for="company" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">Empresa ou Projeto</label>
+                  <label for="company" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1.5">Empresa ou Projeto</label>
                   <input type="text" id="company" name="company" placeholder="Ex.: Drogaria Vida / Escritório X" 
-                         class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
+                         class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="email" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">E-mail Profissional *</label>
+                  <label for="email" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1.5">E-mail Profissional *</label>
                   <input type="email" id="email" name="email" required placeholder="marcelo@empresa.com.br" 
-                         class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
+                         class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
                 </div>
 
                 <div>
-                  <label for="phone" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">WhatsApp / Telefone *</label>
+                  <label for="phone" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1.5">WhatsApp / Telefone *</label>
                   <input type="tel" id="phone" name="phone" required placeholder="(31) 99999-9999" 
-                         class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
+                         class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
                 </div>
               </div>
 
               <div>
-                <label for="subject" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">Necessidade Principal *</label>
-                <select id="subject" name="subject" required class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-white focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
+                <label for="subject" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1.5">Necessidade Principal *</label>
+                <select id="subject" name="subject" required class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-100 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm">
                   <option value="" disabled selected>Selecione uma especialidade...</option>
                   <option value="software">Desenvolvimento de Sistema Web / SaaS Sob Medida</option>
                   <option value="gestormei">Interesse no Gestor MEI (PDV / Delivery / Fiscal)</option>
@@ -1089,9 +1115,9 @@
               </div>
 
               <div>
-                <label for="message" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-2">Descreva seu objetivo ou desafio *</label>
+                <label for="message" class="block text-xs font-mono text-slate-300 uppercase tracking-wider mb-1.5">Descreva seu objetivo ou desafio *</label>
                 <textarea id="message" name="message" rows="4" required placeholder="Conte brevemente sobre o seu projeto, processo atual ou a dificuldade técnica que deseja resolver..." 
-                          class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm"></textarea>
+                          class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-all text-sm"></textarea>
               </div>
 
               <!-- Compliance LGPD -->
@@ -1103,9 +1129,9 @@
                 </label>
               </div>
 
-              <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl text-base">
+              <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-sky-400 to-cyan-400 hover:from-sky-300 hover:to-cyan-300 transition-all duration-300 shadow-xl shadow-cyan-500/20 hover:shadow-cyan-500/30 text-base cursor-pointer">
                 <span>Enviar Solicitação Direta</span>
-                <svg class="w-5 h-5 shrink-0" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
@@ -1123,12 +1149,12 @@
 
   <!-- Rodapé Institucional Assinado (#020617) -->
   <footer class="relative bg-[#020617] border-t border-slate-800/80 py-12 px-4 sm:px-6 lg:px-8 z-10">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       
       <!-- Logo + Assinatura -->
       <div class="flex items-center gap-3">
-        <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 border border-slate-700">
-          <svg class="w-4 h-4 text-sky-400" viewBox="0 0 32 32" fill="none">
+        <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 border border-slate-700 shrink-0">
+          <svg class="w-4 h-4 text-sky-400 shrink-0" viewBox="0 0 32 32" fill="none">
             <path d="M8 9V23H15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
             <path d="M18 9V23M18 9H23.5C25.433 9 27 10.567 27 12.5C27 14.433 25.433 16 23.5 16H18" stroke="#34D399" stroke-width="2.5" stroke-linecap="round"/>
           </svg>
